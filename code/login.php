@@ -1,8 +1,8 @@
 <?php
 require('classes/login.php');
 
-$login = $_POST["login"];
-$senha = $_POST["senha"];
+$login = filter_input(INPUT_POST, 'login');
+$senha = filter_input(INPUT_POST, 'senha');
 $validador = new Login();
 
 
