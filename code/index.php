@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro de Vagas de Estágio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-    <div class="box"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Logo_fatec_araras.png" alt=""><h2 class="textlogin">Login</h2>
-    <form action="login.php" method="POST">
-        <label for="login">Login:</label>
-        <input type="text" id="login" name="login" placeholder="Insira seu login"required><br><br>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Insira sua senha"required><br><br>
-        <input class="botaoentrar" type="submit" value="Entrar">
-    </form>
+<?php 
+    $template['title'] = 'Login';
+    $template['esconder_menu'] = true;
+    require __DIR__.'/templates/header.php'; 
+?>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="post" action="login.php">
+            <div class="mb-3">
+                <label for="campoLogin" class="form-label">Login</label>
+                <input name="login" type="text" class="form-control" id="campoLogin" placeholder="Digite seu login" required>
+            </div>
+            <div class="mb-3">
+                <label for="campoSenha" class="form-label">Senha</label>
+                <input name="senha" type="password" class="form-control" id="campoSenha" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
     </div>
-    </div>
-</body>
-</html>
+</div>
+
+
+<?php 
+    require __DIR__.'/templates/footer.php'; 
+?>
