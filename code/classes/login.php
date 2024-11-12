@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 /**
  * Classe responsável por gerenciar o login do usuário.
@@ -38,9 +40,10 @@ class Login {
      * @return bool Retorna TRUE se o usuário está logado, chama logout() e redireciona caso contrário.
      */
     public function verificar_logado() { 
-        if ($_SESSION["logged_in"]) {
+        if (isset($_SESSION["logged_in"])) {
             return TRUE;
         }
+        
         $this->logout();
     } 
 
